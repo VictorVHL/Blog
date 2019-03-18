@@ -1,0 +1,25 @@
+{
+"name": "LikeunlikeForComment",
+"base": "PersistedModel",
+"idInjection": true,
+"options": {
+  "validateUpsert": true
+},
+"properties": {
+},
+"validations": [],
+"relations": {
+  "comment": {
+    "type" : "belongsTo",
+    "model": "comment",
+    "foreignKey": "commentId"
+  },
+  "user": {
+    "type": "belongsTo",
+    "model": "user",
+    "foreignKey": "userId"
+  }
+},
+"acls": [],
+"methods": {}
+}

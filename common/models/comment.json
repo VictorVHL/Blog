@@ -1,0 +1,40 @@
+{
+    "name": "Comment",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+      "validateUpsert": true
+    },
+    "properties": {
+    "text": {
+        "type": "string",
+        "required": true
+    }
+    },
+    "validations": [],
+    "relations": {
+      "user": {
+        "type" : "belongsTo",
+        "model": "User",
+        "foreignKey": ""
+      },
+      "article": {
+        "type": "belongsTo",
+        "model": "Article",
+        "foreignKey": ""
+      },
+      "ancestor": {
+        "type": "hasMany",
+        "model": "Comment",
+        "foreignKey": "ancestorId"
+      },
+      "likes": {
+        "type": "hasMany",
+        "model": "Comment",
+        "foreignKey": "commentId",
+        "through": "LikeForComment"
+      }
+    },
+    "acls": [],
+    "methods": {}
+  }

@@ -1,0 +1,41 @@
+{
+"name": "user",
+ "plural": "users",
+ "base": "User",
+ "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+  },
+  "email": {
+      "type": "string",
+      "required": true
+  },
+  "password": {
+      "type": "string",
+      "required": true
+  }
+  },
+  "validations": [],
+  "relations": {
+    "comment": {
+      "type": "hasMany",
+      "model": "comment",
+      "foreignKey": "userId",
+      "through": "LikeForComment"
+    },
+    "article": {
+      "type": "hasMany",
+      "model": "article",
+      "foreignKey": "userId",
+      "through": "LikeForArticle"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
+

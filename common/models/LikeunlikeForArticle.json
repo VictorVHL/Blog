@@ -1,0 +1,26 @@
+{
+    "name": "LikeunlikeForArticle",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+      "validateUpsert": true
+    },
+    "properties": {
+    },
+    "validations": [],
+    "relations": {
+      "article": {
+        "type" : "belongsTo",
+        "model": "Article",
+        "foreignKey": "articleId"
+      },
+      "user": {
+        "type": "belongsTo",
+        "model": "user",
+        "foreignKey": "userId"
+      }
+    },
+    "acls": [],
+    "methods": {}
+    }
+    
